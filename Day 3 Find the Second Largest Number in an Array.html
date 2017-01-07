@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var n = [2 ,3 ,6 ,6 ,5];
+		function processData(myArray) {
+
+			/* No ALL TEST CASE
+			   	10
+				1 2 3 4 5 6 7 8 9 10
+				OUTPUT  8 
+			
+			/*========================================================================
+			var arr = myArray.sort().filter((v, i, s) => s.indexOf(v) === i);   
+			console.log(arr[arr.length - 2]);
+
+			//BASIC SORT
+			myArray = myArray.sort();
+			var largest = myArray[myArray.length - 1];
+			myArray = myArray.filter((x) => x != largest); //MEMO LAST NUMBER  , => FOR MAX NUMBER
+			console.log(myArray[myArray.length - 1]);
+
+			// ANONYMOUSE REDUCE
+			var largest = Math.max.apply(null, myArray);
+			console.log(Math.max.apply(null, myArray.filter( 
+				x => x != largest) 
+			) );
+			==========================================================================*/
+
+			//Sorted the array
+			myArray.sort(function(a,b){return a > b});
+			var lastIndex=myArray.length-1;
+
+			var newArray = [];
+			for(var i=0;i<myArray.length;i++)
+				if(myArray[i]!==myArray[lastIndex])                 
+					newArray.push(myArray[i]);
+
+				var last = newArray[newArray.length - 1];
+				console.log(last);
+			}
+
+			processData(n);
+			console.log("Test_Mathmaxapply");
+			function Test_Mathmaxapply()
+			{
+				var list = ["12","23","100","34","56","9","233"];
+			console.log(Math.max("12", "23", "100", "34", "56", "9", "233")); //233
+
+			console.log(Math.max(list)); //Nan
+
+			console.log(Math.max.apply(Math, list));   //233
+			console.log(Math.max.apply(null, list));     // 233
+			console.log(Math.max.apply(undefined, list));    // 233	
+
+
+		}
+		Test_Mathmaxapply();
+	</script>
+</body>
+</html>

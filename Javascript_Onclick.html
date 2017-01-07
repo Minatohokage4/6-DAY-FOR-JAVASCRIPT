@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p>Click the button to display an alert box:</p>
+	<button onclick="myFunction()">Try it</button>
+
+	<script>
+		function myFunction() {
+			alert("I am an alert box!");
+		}
+	</script>
+
+	<!-- CLEAN CODE ---->
+	<a href="#" onClick="alert('Hello World!')"><img title="The Link" /></a><br>
+	<button onClick="alert('Hello World!')">Try it to short</button><br><br>
+
+
+	<!--  getElementById -->
+	<input type="text" id="txt" value="amplysoft" /> 
+	<script type="text/javascript">
+
+		var txt = document.getElementById('txt').value;
+		document.write( "<br/>javascript write txt id value = " + txt );
+
+	</script>
+	<br>
+
+
+	<!--  getElementByName 
+	NOTE  BYNAME  RETURN VALUE  IS ARRAY (ELEMENTS)  BYID GET  ONE ELEMENT-->
+	Cats:
+	<input name="animal" type="checkbox" value="Cats">
+	Dogs:
+	<input name="animal" type="checkbox" value="Dogs">
+
+	<button onclick="myFunction()">Try it</button>
+	<p id="demo"></p>
+
+	<script>
+		function myFunction() {
+			var x = document.getElementsByName("animal").value;
+			document.getElementById("demo").innerHTML = x;
+		}	
+	</script>	
+	<br>
+
+	<!-- NOTE   IF YOU  USE ANONYMOSE   NEED  ADDEVENT   DONT USE ONCLIKC -->
+	<!--USE ANONYMOSE-->
+	<p>This example uses the addEventListener() method to attach a click event to a button.</p>
+
+	<button id="myBtn">Try it</button>
+
+	<p id="demo"></p>
+
+	<script>
+		document.getElementById("myBtn").addEventListener("click", function(){
+			alert("I am an alert box!");
+		});
+	</script>
+	<!--USE ANONYMOSE-->
+
+
+
+	<!-- jquerys format-->	
+	<script type="text/javascript" src="jquery-3.1.1.js"> // Tag HTML 
+		$('p');
+	</script>
+
+	<script type="text/javascript" src="jquery-3.1.1.js"> //  Attribute Id 
+		$('#id')
+	</script>
+
+	<script type="text/javascript" src="jquery-3.1.1.js"> // Attribute Class
+		$('.id');
+	</script>
+	<!-- jquerys format-->
+
+
+
+	<p>Click on this paragraph.</p>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("p").click(function(){
+				alert("The paragraph was clicked.");
+			});
+		});
+	</script>
+
+</body>
+</html>
